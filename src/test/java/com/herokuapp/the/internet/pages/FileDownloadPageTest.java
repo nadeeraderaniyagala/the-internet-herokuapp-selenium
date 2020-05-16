@@ -10,26 +10,27 @@ import java.io.File;
 
 import static com.herokuapp.the.internet.util.Constants.DOWNLOAD_PATH;
 
-public class FileDownloadPageTest {
+public class FileDownloadPageTest extends BaseTest {
     WebDriver driver;
     FileDownloadPage fileDownloadPage;
+    HomePage homePage;
+
 
     @BeforeMethod
-    public void setUp(){
-        DriverInit.getInstance().initiateBrowser();
+    public void moveToFileDownloadPage() {
         driver = DriverInit.getInstance().getDriver();
-        fileDownloadPage = new FileDownloadPage(driver);
+        homePage = new HomePage(driver);
+        fileDownloadPage = homePage.clickOnFileDownloadLink();
     }
 
     @Test
-    public void isFileDownloaded(){
+    public void isFileDownloaded() {
         fileDownloadPage.clickOnFile();
-        File filesInDownloadFolder= new File(DOWNLOAD_PATH);
-       for(File file: filesInDownloadFolder.listFiles() ){
-           System.out.println(file.getName());
-       }
-       Assert.assertTrue(filesInDownloadFolder.listFiles().length>0);
-
+        File filesInDownloadFolder = new File(DOWNLOAD_PATH);
+        for (File file : filesInDownloadFolder.listFiles()) {
+            System.out.println(file.getName());
+        }
+        Assert.assertTrue(filesInDownloadFolder.listFiles().length > 0);
     }
 
 }

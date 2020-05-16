@@ -41,7 +41,7 @@ public class DriverInit {
         driver = new ChromeDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(1,TimeUnit.MINUTES);
-        driver.get("https://the-internet.herokuapp.com/download");
+        driver.get("https://the-internet.herokuapp.com");
     }
 
     public WebDriver getDriver(){
