@@ -1,9 +1,9 @@
 ### Test Automation Suite for 
-###https://the-internet.herokuapp.com
+### https://the-internet.herokuapp.com
 
-This automation suite is biult using POM(Page Object Model) with Page Factory.
+This automation suite is built using POM(Page Object Model) with Page Factory.
+ language
 
- _Java_ 
- _TestNg_
- _Selenuim_
- _log4j2_
+    - Java with Selenium
+    - Assertions using TestNg
+    - Logging using log4j2

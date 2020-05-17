@@ -1,5 +1,6 @@
 package com.herokuapp.the.internet.pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+@Log4j2
 public class HomePage {
     private WebDriver  driver;
 
@@ -29,19 +31,19 @@ public class HomePage {
 
     public FileDownloadPage clickOnFileDownloadLink(){
         fileDownload.click();
-        System.out.println("clickOnFileDownloadLink");
+        log.info("clickOnFileDownloadLink");
         return new FileDownloadPage(driver);
     }
 
     public WindowsPage clickOnWindowsLink(){
         windows.click();
-        System.out.println("clickOnWindowsLink");
+        log.info("clickOnWindowsLink");
         return new WindowsPage(driver);
     }
 
     public FramesPage clickOnFramesLink(){
         framesLink.click();
-        System.out.println("clickOnFramesLink");
+        log.info("clickOnFramesLink");
         return new FramesPage(driver);
     }
 

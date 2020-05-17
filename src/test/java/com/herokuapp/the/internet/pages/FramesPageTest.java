@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class FramesPageTest extends BaseTest{
-    WebDriver driver;
+    private WebDriver driver;
     HomePage homePage;
     FramesPage framesPage;
 

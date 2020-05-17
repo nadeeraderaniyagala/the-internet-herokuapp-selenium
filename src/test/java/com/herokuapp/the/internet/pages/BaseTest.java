@@ -12,15 +12,15 @@ public class BaseTest {
     HomePage homePage;
 
     @BeforeMethod
-    public void initialization(){
+    public void initialization() {
         DriverInit.getInstance().initiateBrowser();
-        driver= DriverInit.getInstance().getDriver();
-        homePage =new HomePage(driver);
+        driver = DriverInit.getInstance().getDriver();
+        homePage = new HomePage(driver);
+        log.info("Driver initialization successful");
     }
 
     @AfterMethod
-    public void tearDown(){
-
-//        driver.quit();
+    public void tearDown() {
+        driver.quit();
     }
 }

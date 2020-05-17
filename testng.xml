@@ -2,7 +2,7 @@
 <suite name="The Internet Test Automation Suite ">
     <test name="TheIneternet">
         <classes>
-            <class name="com.herokuapp.the.internet.pages.FileDownloadPageTest" />
+            <!--<class name="com.herokuapp.the.internet.pages.FileDownloadPageTest" />-->
         </classes>
     </test>
 </suite>
