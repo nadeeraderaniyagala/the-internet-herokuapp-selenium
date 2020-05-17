@@ -17,6 +17,9 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/windows']")
     private WebElement windows;
 
+    @FindBy(xpath = "//a[@href='/frames']")
+    private WebElement framesLink;
+
 
     public HomePage(WebDriver driver){
         this.driver= driver;
@@ -34,6 +37,12 @@ public class HomePage {
         windows.click();
         System.out.println("clickOnWindowsLink");
         return new WindowsPage(driver);
+    }
+
+    public FramesPage clickOnFramesLink(){
+        framesLink.click();
+        System.out.println("clickOnFramesLink");
+        return new FramesPage(driver);
     }
 
     public List<WebElement> getAllLinks(){
