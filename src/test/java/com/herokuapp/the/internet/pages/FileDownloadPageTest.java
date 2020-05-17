@@ -11,9 +11,9 @@ import java.io.File;
 import static com.herokuapp.the.internet.util.Constants.DOWNLOAD_PATH;
 
 public class FileDownloadPageTest extends BaseTest {
-    WebDriver driver;
-    FileDownloadPage fileDownloadPage;
-    HomePage homePage;
+    private WebDriver driver;
+    private FileDownloadPage fileDownloadPage;
+    private HomePage homePage;
 
 
     @BeforeMethod

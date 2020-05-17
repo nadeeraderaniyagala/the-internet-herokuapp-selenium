@@ -1,9 +1,6 @@
 package com.herokuapp.the.internet.pages;
 
-import com.herokuapp.the.internet.DriverInit;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -11,11 +8,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 public class HomePageTest extends BaseTest{
 
-    @Test
+
+    @Test(enabled = false)
     public void validateAllLinksWorking(){
         List<WebElement> allAnchorTags =homePage.getAllLinks();
         for(WebElement ele : allAnchorTags){

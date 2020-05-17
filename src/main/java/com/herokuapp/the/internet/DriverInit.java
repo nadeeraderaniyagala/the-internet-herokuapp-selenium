@@ -1,10 +1,8 @@
 package com.herokuapp.the.internet;
 
-import com.herokuapp.the.internet.pages.FileDownloadPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 import java.util.HashMap;
@@ -37,10 +35,17 @@ public class DriverInit {
         preferences.put("download.default_directory",DOWNLOAD_PATH);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs",preferences);
-        options.addArguments("start-maximized");
+        options.addArguments("start-maximized");options.addArguments("enable-automation");
+//        options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--dns-prefetch-disable");
+        options.addArguments("--disable-gpu");
         driver = new ChromeDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(1,TimeUnit.MINUTES);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://the-internet.herokuapp.com");
     }
 

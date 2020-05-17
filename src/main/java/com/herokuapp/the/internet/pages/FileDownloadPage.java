@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FileDownloadPage {
-    WebDriver driver;
+    private WebDriver driver;
 
     @FindBy(linkText = "some-file.txt")
     @CacheLookup

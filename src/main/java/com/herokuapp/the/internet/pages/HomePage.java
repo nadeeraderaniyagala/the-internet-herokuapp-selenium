@@ -5,19 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import sun.net.www.http.HttpClient;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.List;
 
 public class HomePage {
-    WebDriver  driver;
+    private WebDriver  driver;
 
     @FindBy(xpath = "//a[@href='/download']")
     private WebElement fileDownload;
+
+    @FindBy(xpath = "//a[@href='/windows']")
+    private WebElement windows;
+
 
     public HomePage(WebDriver driver){
         this.driver= driver;
@@ -31,6 +30,11 @@ public class HomePage {
         return new FileDownloadPage(driver);
     }
 
+    public WindowsPage clickOnWindowsLink(){
+        windows.click();
+        System.out.println("clickOnWindowsLink");
+        return new WindowsPage(driver);
+    }
 
     public List<WebElement> getAllLinks(){
         return driver.findElements(By.tagName("a"));
