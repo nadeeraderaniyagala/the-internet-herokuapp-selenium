@@ -1,8 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="The Internet Test Automation Suite ">
+
+    <listeners>
+        <listener class-name="com.herokuapp.the.internet.util.ExtentReporter"/>
+    </listeners>
+
     <test name="TheIneternet">
         <classes>
-            <!--<class name="com.herokuapp.the.internet.pages.FileDownloadPageTest" />-->
+            <class name="com.herokuapp.the.internet.pages.FileDownloadPageTest" />
         </classes>
     </test>
 </suite>
